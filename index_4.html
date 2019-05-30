@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Browser-Modifiable Adaptable Window</title>
+    <script>
+      function setUrl(){
+        var form = document.getElementById("url").value;
+        document.getElementById("frame").setAttribute("src", form)
+      }
+    </script>
+  </head>
+  <body>
+    <h1 align="center">My first sub-window</h1>
+    <center>
+    <form>
+      Enter url: <input type="text" name="url" id="url" >
+      <input type="button" value="GO!" onclick="setUrl()">
+    </form> <br>
+    <iframe id="frame" src="https://www.google.com/webhp?igu=1" width="80%" height="500px" name="smallWindow"></iframe>
+    </center>
+  </body>
+</html>

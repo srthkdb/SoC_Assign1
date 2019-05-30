@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Re-sizeable Browser-Modifiable Window</title>
+    <script>
+      function setUrl(){
+        var form = document.getElementById("url").value;
+        document.getElementById("frame").setAttribute("src", form)
+      }
+
+      function resize(){
+        var h = document.getElementById("height").value;
+        var w = document.getElementById("width").value;
+        document.getElementById("frame").setAttribute("height", h);
+        document.getElementById("frame").setAttribute("width", w);
+      }
+    </script>
+  </head>
+  <body>
+    <h1 align="center">My first sub-window</h1>
+    <center>
+    <form>
+      Enter url: <input type="text" name="url" id="url" >
+      <input type="button" value="GO!" onclick="setUrl()">
+    </form> <br>
+    <iframe id="frame" src="https://www.google.com/webhp?igu=1" width="80%" height="500px" name="smallWindow"></iframe>
+    <form>
+      Height: <input type="text" id="height" > <br>
+      Width: <input type="text" id="width"> <br>
+      <input type="button" value="Resize" onclick="resize()">
+    </form>
+    </center>
+  </body>
+</html>
